@@ -26,5 +26,5 @@ jobs:
         with:
           context: / 
           push: true
-          tags: ghcr.io/rogerdipasquale/sladk:${{ github.ref_name }}
+          tags: ghcr.io/rogerdipasquale/sladk-agents:${{ github.ref_name }}
 
