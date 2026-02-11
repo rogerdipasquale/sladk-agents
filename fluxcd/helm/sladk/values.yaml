@@ -1,9 +1,9 @@
 selectorLabels: |
-  chartSelector
-  blabla2
+  app: slackd
+  purpose:ia
 labels: |
-  chart
-  blabla
+  app: slackd
+  purpose: ia
 replcaCount: 1
 rollingUpdate:
   maxSurge:
