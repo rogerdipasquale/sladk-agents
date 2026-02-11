@@ -9,13 +9,7 @@ resources:
   requests: 
     cpu: 400m
     memory: 512M
-selectorLabels: |
-  sladk
-  test
-labels: |
-  sladk
-  test
-replcaCount: 1
+replicaCount: 1
 hpaRequired: true
 hpa:
   scaleDown:
