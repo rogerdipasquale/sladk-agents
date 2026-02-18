@@ -5,13 +5,12 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: /fluxcd/apps/
+  path: fluxcd/apps/
   prune: true
   timeout: 1m
   retryInterval: 3m0s
   sourceRef:
     kind: GitRepository
     name: sladk-repo
-  targetNamespace: flux-system
-  timeout: 3m0s
+  targetNamespace: sladk
   wait: true
