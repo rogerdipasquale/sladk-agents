@@ -6,7 +6,7 @@ metadata:
 resources:
   - ../../base/
 nameSuffix: -main
-namespace: sladk
+namespace: flux-system
 patches:
   - path: ./patch.yaml
 

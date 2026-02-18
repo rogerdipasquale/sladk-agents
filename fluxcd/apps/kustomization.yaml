@@ -7,7 +7,7 @@ resources:
   - ./overlays/main/
 configMapGenerator:
   - name: common-sladk
-    namespace: sladk
+    namespace: flux-system
     files:
       - values.yaml=defaults.yaml
 configurations:
