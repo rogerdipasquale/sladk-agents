@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/rogerdipasquale/sladk-agents
-  tag: latest
+  tag: initial
   pullPolicy: Always
 resources:
   limits:
@@ -9,12 +9,13 @@ resources:
   requests: 
     cpu: 400m
     memory: 512M
-selectorLabels: |
-  sladk
-  test
-labels: |
-  sladk
-  test
+selectorLabels: 
+  app: sladk
+  env: test
+  purpose: ia
+labels:
+  app: sladk
+  purpose: ia
 replcaCount: 1
 hpaRequired: true
 hpa:
@@ -38,7 +39,30 @@ hpa:
   maxReplicas: 1
   minReplicas: 1
   memory:
-    averageUtilization: 90%
+    averageUtilization: 90
   cpu:
-    averageUtilization: 90%
+    averageUtilization: 90
+livenessprobe:
+  failureThreshold: 3
+  exec:
+    command:
+      - /bin/sh
+      - -c
+      - "if [[ $(ps |grep app.py |wc -l)  -le 1 ]];then  exit 1;else exit 0; fi"
+  initialDelaySeconds: 10
+  periodSeconds: 60
+  successThreshold: 1
+  timeoutSeconds: 2
+startupprobe:
+  exec:
+    command:
+      - /bin/sh
+      - -c
+      - "if [[ $(ps |grep app.py |wc -l)  -le 1 ]];then  exit 1;else exit 0; fi"
+  failureThreshold: 3
+  initialDelaySeconds: 2
+  periodSeconds: 5
+  successThreshold: 1
+  timeoutSeconds: 1
+secretRef: sladk-secrets
 
