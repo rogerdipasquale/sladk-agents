@@ -44,23 +44,21 @@ hpa:
     averageUtilization: 90
 livenessprobe:
   failureThreshold: 3
-  httpGet:
-    path: /status
-    port: 8080
-    scheme: HTTP
-  initialDelaySeconds: 120
-  periodSeconds: 20
+  exec:
+    command:
+      - "if [[ $(ps |grep app.py |wc -l)  -le 1 ]];then  echo menor 1;else echo mayor 1; fi"
+  initialDelaySeconds: 10
+  periodSeconds: 60
   successThreshold: 1
-  timeoutSeconds: 10
+  timeoutSeconds: 2
 startupprobe:
+  exec:
+    command:
+      - "if [[ $(ps |grep app.py |wc -l)  -le 1 ]];then  echo menor 1;else echo mayor 1; fi"
   failureThreshold: 3
-  httpGet:
-    path: /v2/rules
-    port: 8080
-    scheme: HTTP
-  initialDelaySeconds: 5
-  periodSeconds: 30
+  initialDelaySeconds: 2
+  periodSeconds: 5
   successThreshold: 1
-  timeoutSeconds: 60
+  timeoutSeconds: 1
 secretRef: sladk-secrets
 
