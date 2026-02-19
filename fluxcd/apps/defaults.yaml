@@ -48,7 +48,7 @@ livenessprobe:
     command:
       - /bin/sh
       - -c
-      - "if [[ $(ps |grep app.py |wc -l)  -le 1 ]];then  exit 1;else exit 0; fi"
+      - "ps | grep -q '[a]pp.py'"
   initialDelaySeconds: 10
   periodSeconds: 60
   successThreshold: 1
