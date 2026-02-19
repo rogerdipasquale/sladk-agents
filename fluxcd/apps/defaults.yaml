@@ -16,7 +16,7 @@ selectorLabels:
 labels:
   app: sladk
   purpose: ia
-replcaCount: 1
+replicaCount: 1
 hpaRequired: true
 hpa:
   scaleDown:
