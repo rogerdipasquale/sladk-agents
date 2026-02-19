@@ -16,8 +16,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: common-sladk
-  values:
-    env: 
-      - name: ENV
-        value: stage
 
