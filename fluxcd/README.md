@@ -144,8 +144,8 @@ This configuration is typically deployed using FluxCD's CLI:
 
 ```bash
 flux bootstrap git \
-  --url=https://github.com/rogerdipasquale/sladk-agents \
-  --branch=feature/main \
+  --url=https://github.com/jonigl/sladk-agents \
+  --branch=main \
   --path=fluxcd
 ```
 
