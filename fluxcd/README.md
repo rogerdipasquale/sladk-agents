@@ -97,7 +97,7 @@ fluxcd/
 
 ## Secret Template
 
-The application requires a secret named `sladk-secrets` in the `sladk` namespace. Create a file named `sladk-secrets.yaml` with the following template:
+The application requires a secret named `sladk-secrets` in the `sladk-agents` namespace. Create a file named `sladk-secrets.yaml` with the following template:
 
 ```yaml
 apiVersion: v1
