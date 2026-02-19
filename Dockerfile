@@ -14,4 +14,4 @@ RUN adduser -D $USERNAME
 RUN chown -R $USERNAME /opt/app
 USER $USERNAME
 
-ENTRYPOINT python3 app.py
+ENTRYPOINT ["python3", "app.py"]
