@@ -125,7 +125,7 @@ kubectl apply -f sladk-secrets.yaml
 
 | Key | Value |
 |-----|-------|
-| `app` | `sladk` |
+| `app` | `sladk-agent` |
 | `purpose` | `ia` |
 | `env` | `test` |
 

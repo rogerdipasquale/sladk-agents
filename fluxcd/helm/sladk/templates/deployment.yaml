@@ -39,10 +39,14 @@ spec:
           - secretRef:
               name: {{ . }}
           {{- end }}
+          {{- with .Values.livenessprobe }}
           livenessProbe:
-            {{- toYaml .Values.livenessprobe | nindent 12 }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.startupprobe }}
           startupProbe:
-            {{- toYaml .Values.startupprobe | nindent 12 }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

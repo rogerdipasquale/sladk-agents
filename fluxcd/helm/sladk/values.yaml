@@ -1,13 +1,13 @@
 selectorLabels:
-  app: slackd
+  app: sladk-agent
   purpose: ia
 labels:
-  app: slackd
+  app: sladk-agent
   purpose: ia
 replicaCount: 1
 rollingUpdate:
-  maxSurge:
-  maxUnavailable:
+  maxSurge: "25%"
+  maxUnavailable: "25%"
 podAnnotations: {}
 imagePullSecrets: {}
 serviceAccountName: ""
